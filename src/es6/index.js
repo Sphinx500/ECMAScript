@@ -32,3 +32,62 @@ console.log(epicPhrase);
 //CON
 let epicPhrase2 = `${hello} ${world}`;
 console.log(epicPhrase2);
+
+
+
+
+// LET y CONST, Multilínea, Spread Operator y Desestructuración
+
+//ANTES
+let lorem = "Quiero aprender ECMAScript y ser genial \n"
++ "una nueva aventura";
+
+//AHORA
+let lorem2=`otra frase epica super genial
+ahora es otra frase diferente
+`;
+console.log(lorem);
+console.log(lorem2);
+
+//Destructuracion de elementos
+//SIN
+let person = {
+    'name': 'John',
+    'age': 34,
+    'country': 'MX'
+}
+console.log(person.name,person.age,person.country);
+
+//CON
+let {name,age,country} = person;
+console.log(name,age,country);
+
+
+//Operador de propagacion para expandir elementos
+let team1 = ['Oscar', 'Julian', 'Ricardo']
+let team2 = ['Valeria', 'Jessica', 'Camila']
+
+let education = ['David', ...team1, ...team2];
+console.log(education);
+
+//Elementos para guardar en memoria
+
+//ANTES
+var hola = 'Hola';
+
+//Es accesible
+{
+    var globalVar = "Global";
+}
+
+//no es accesible por fuera
+{
+    let globalLet = 'Global Let';
+    console.log(globalLet);
+}
+
+console.log(globalVar);
+
+//uso de Const, no permite reasignar
+const a = 'b';
+
