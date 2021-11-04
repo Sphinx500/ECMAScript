@@ -143,3 +143,49 @@ helloPromise()
 .then(response =>console.log("Hola"))
 //atrapa el error
 .catch(error =>console.log(error))
+
+
+
+
+
+//Clases, Módulos y Generadores
+class calculator{
+    //constructor para inicializar la clase
+    constructor(){
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+    //Metodo de suma
+    sum(valueA, valueB){
+        this.valueA = valueA;
+        this.valueB = valueB;
+        return this.valueA + this.valueB;
+    }
+}
+
+//trabajar objetos y herencia
+const calc = new calculator();
+console.log(calc.sum(2,2));
+
+
+//IMPORTAR Y EXPORTAR MODULOS
+import {hello} from './module';
+
+hello();
+
+//GENERADORES
+function* helloWorld() {
+    //segun el algoritmo retorna los valores
+    if(true) {
+        yield 'Hello, ';
+    }
+    if(true) {
+        yield 'World!';
+    }
+};
+
+const generatorHello = helloWorld();
+//permite ejecutar la logica y obtener valor, y a la siguiente recuerda el valor
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
