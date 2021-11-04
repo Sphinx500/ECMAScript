@@ -91,3 +91,55 @@ console.log(globalVar);
 //uso de Const, no permite reasignar
 const a = 'b';
 
+
+// Arrow Functions, Promesas y Parámetros en objetos
+
+//Asignacion de objetos
+let name = 'Fer';
+let age = 21;
+
+//ANTES
+obj = {name: name, age: age};
+
+//AHORA
+obj2= { name , age};
+console.log(obj2);
+
+const names = [
+    {name: 'Fer', age: 21},
+    {name: 'Arrow', age:24}
+];
+//ANTES CON FUNCION ANONIMA
+let listOfNames = names.map(function(item){
+    console.log(item.name);
+})
+
+//AHORA CON ARROW FUNCTION
+let listOfNames2 = names.map(item => console.log(item.name));
+
+const listOfNames3 = (name, age) => {
+}
+
+const listOfNames4 = name => {
+}
+
+const square = num => num * num;
+
+//PROMESAS PARA TRABAJAR EL ASINCRONISMO
+const helloPromise = () => {
+    //va a resolver o ser rechazada
+    return new Promise((resolve, reject) => {
+        if(true){
+            resolve("Fine!!");
+        } else{
+            reject("Not working!");
+        }
+    });
+}
+//Ejecutar promesa
+helloPromise()
+//retorna el valor
+.then(response =>console.log(response))
+.then(response =>console.log("Hola"))
+//atrapa el error
+.catch(error =>console.log(error))
