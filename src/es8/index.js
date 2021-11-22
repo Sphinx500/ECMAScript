@@ -37,3 +37,38 @@ const data= {
     front:'Alej', // Puede existir
     back: 'Rel'
 }
+
+
+
+//ASYNC AWAIT.
+//Agreganvalor para cambiar el comportamiento de la funcion
+
+//Ser mas claro
+//funciona mejor con el asincronismo
+const helloWorld =() => {
+    return new Promise((resolve, reject) => {
+        (true)
+        //recibe la funcion y el tiempo
+        ? setTimeout(() => resolve('hello World'),3000)
+        :reject(new Error('Test Error'))
+    })
+};
+
+const helloAsync = async () => {
+    const hello = await helloWorld();
+    console.log(hello);
+}
+
+helloAsync();
+
+//Asi se ejecuta correctamente
+
+const anotherAsync = async () => {
+    //probamos y si tiene un error cae en el catch y capturamos el error
+    try{
+        const hello = await helloWorld();
+        console.log(hello);
+    }catch(error){
+        console.log(error);
+    }
+}
